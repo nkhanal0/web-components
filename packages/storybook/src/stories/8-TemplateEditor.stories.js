@@ -224,4 +224,4 @@ templateEditor.parameters = {
 
 const withProvider = (templateEditor) => <Provider store={store}>{templateEditor()}</Provider>;
 
-export default { title: 'Contract Editor', decorators: [withProvider] };
+export default { title: 'Template Editor', decorators: [withProvider] };
