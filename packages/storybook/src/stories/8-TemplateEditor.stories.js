@@ -98,18 +98,13 @@ export const templateEditor = () => {
     if (editor && templateUrl) {
       Template.fromUrl(templateUrl)
         .then(async (template) => {
-          // const clause = new Clause(template);
           const grammar = template.getParserManager().getTemplate();
           const modelManager = template.getModelManager();
           const t = new TemplateMarkTransformer();
           const templateTokens = t.toTokens({ fileName: 'grammar.txt', content: grammar });
-          // console.log('templateTokens - ', templateTokens);
           const type = template.getMetadata().getTemplateType() === 0 ? 'contract' : 'clause';
           const templateMark = t.tokensToMarkdownTemplate(templateTokens, modelManager, type);
-          // console.log('templateMark - ', templateMark)
           const slateValueNew = slateTransformer.fromTemplateMark(templateMark);
-          // const slateValueNew = await transform(grammar, 'markdown_template', ['slate'], { model: modelFiles })
-          // const slateValueNew = await clause.draft({ format: 'slate' });
           console.log('slateValueNew', slateValueNew);
 
           const extraMarkdown = `This is some more text after a clause. Test moving a clause by dragging it or by using the up and down arrows.`;
