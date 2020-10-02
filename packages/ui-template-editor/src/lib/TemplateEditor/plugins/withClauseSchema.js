@@ -1,8 +1,8 @@
-export const CLAUSE = 'clause';
-export const VARIABLE = 'variable';
-export const CONDITIONAL = 'conditional';
-export const OPTIONAL = 'optional';
-export const FORMULA = 'formula';
+export const CLAUSE = 'clause_definition';
+export const VARIABLE = 'variable_definition';
+export const CONDITIONAL = 'conditional_definition';
+export const OPTIONAL = 'optional_definition';
+export const FORMULA = 'formula_definition';
 
 const INLINES = {
   [VARIABLE]: true,
